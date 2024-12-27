@@ -14,7 +14,7 @@ fn main() {
 
     let exe_path = "./exe/";
     let template_path = format!("{home}/fillthehole/templates/templates.cpp");
-    let problem_name = &args[1];
+    let problem_name = &args[1].replace(' ', "_");
 
     let make_content = format!(
         "{problem_name}: {problem_name}.cpp\n\tg++ {problem_name}.cpp -o {exe_path}{problem_name} && {exe_path}{problem_name}\n\nclean:\n\trm -I {exe_path}*"
