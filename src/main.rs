@@ -20,9 +20,13 @@ fn main() {
         problem_name = problem_name.trim().replace(' ', "_");
     } else if args.len() == 2 {
         problem_name = args[1].replace(' ', "_");
+    } else {
+        println!("ERROR: Incorrect usage");
+        println!("=> slv <problem_name>");
+        return;
     }
 
-    let exe_path = "./exe/";
+    let exe_path = ".exe/";
     let template_path = format!("{home}/fillthehole/templates/templates.cpp");
 
     let make_content = format!(
